@@ -37,7 +37,7 @@ fn format_uuid(raw: &str) -> String {
 /// # Arguments
 ///
 /// * `server_hash` - Server hash obtained from the c2s packet
-/// * `encode_query_params` - if this is true the function will properly encode the query parameters instead of just formatting a string with them.
+/// * `encode_query_params` - if this is true, the function will properly encode the query parameters instead of just formatting a string with them.
 async fn get_profile(username: &str, server_hash: &str, ip: Option<&str>, encode_query_params: bool) -> Result<ProfileResponse, Error> {
     if encode_query_params {
         let mut url = Url::parse("https://sessionserver.mojang.com/session/minecraft/hasJoined").unwrap();
