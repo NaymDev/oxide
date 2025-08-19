@@ -572,6 +572,16 @@ fn nbt_long_array_value(data: &mut Vec<u8>) -> Result<Vec<i64>, Box<dyn Error>> 
   return Ok(arr);
 }
 
+/// ## WILL BREAK IF LENGTH IS NEGATIVE OR WRONG
+/// In case the length is wrong well... it's wrong. If it's negative, the cast to `usize` will cause it to be a HUGE value which most likely is larger than the `Vec`
+pub fn prefixed_array(data: &mut Vec<u8>) -> Result<Vec<u8>, Box<dyn Error>> {
+  let length = varint(data)? as usize;
+  let tail = data.split_off(length);
+  let mut head = Vec::new();
+  std::mem::swap(data, &mut head);
+  *data = tail;
+  Ok(head)
+}
 
 #[cfg(test)]
 mod test {
