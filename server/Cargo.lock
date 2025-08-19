@@ -627,6 +627,9 @@ dependencies = [
  "aes",
  "data",
  "flate2",
+ "reqwest",
+ "serde",
+ "url",
 ]
 
 [[package]]
@@ -768,8 +771,6 @@ dependencies = [
  "data",
  "flate2",
  "lib",
- "reqwest",
- "serde",
 ]
 
 [[package]]

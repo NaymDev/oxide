@@ -14,6 +14,7 @@ pub mod packets;
 pub mod blockstates;
 pub mod types;
 pub mod cryptography;
+pub mod auth;
 
 pub const SPAWN_CHUNK_RADIUS: i8 = 10;
 

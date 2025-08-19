@@ -12,7 +12,6 @@ mod packet_handlers;
 mod types;
 mod command;
 mod terminal_input;
-mod auth;
 
 fn main() {
   println!("Starting the oxide server");

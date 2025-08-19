@@ -7,3 +7,6 @@ edition = "2024"
 data = {path = "../data", version = "*"}
 flate2 = "1.1.2"
 aes = "0.8.4"
+serde = { version = "1.0.219", features = ["derive"] }
+reqwest = { version = "0.12.23", features = ["json"] }
+url = "2.5.4"

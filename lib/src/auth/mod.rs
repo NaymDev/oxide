@@ -1,5 +1,6 @@
-use reqwest::{Error, Url};
+use reqwest::Error;
 use serde::Deserialize;
+use url::Url;
 
 #[derive(Debug, Deserialize)]
 pub struct Property {
@@ -31,7 +32,7 @@ fn format_uuid(raw: &str) -> String {
 }
 
 /// Sends an HTTP request to Mojang's session server
-/// 
+///
 /// Info from: https://minecraft.wiki/w/Java_Edition_protocol/Encryption#Server
 ///
 /// # Arguments
