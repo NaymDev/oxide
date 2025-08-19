@@ -21,7 +21,7 @@ fn main() {
     let connection = Arc::new(Mutex::new(Connection { state: lib::ConnectionState::Handshaking, protocol_version: 0 }));
     let connection_clone = connection.clone();
 
-    //Handle packets coming in on the server side
+    //Handle packets coming in on the server side  (This is kinda unclear so to be very precise: This handles packets coming from the client going to the server)
     std::thread::spawn(move || {
       let connection = connection_clone;
       loop {
@@ -147,7 +147,7 @@ fn main() {
     });
     println!("server listener spawned");
 
-    //Handle packets coming in on the client side
+    //Handle packets coming in on the client side (This is kinda unclear so to be very precise: This handles packets coming from the server going to the client)
     std::thread::spawn(move || {
       let connection = connection.clone();
       loop {
